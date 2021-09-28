@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tugas_msib_lanjutan/main_page.dart';
+import 'main_page.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -23,17 +23,18 @@ class _HomeState extends State<Register> {
 
   void kirimData() {
     AlertDialog alertDialog = AlertDialog(
-      content: Container(
+      content: SizedBox(
         height: 200.0,
         child: Column(
           children: <Widget>[
             Text("Nama Lengkap : ${controllerNama.text}"),
             Text("Password : ${controllerPass.text}"),
             Text("Deskripsi : ${controllerDeskripsi.text}"),
-            Text("Jenis Kelamin : ${_character}"),
-            RaisedButton(
-                child: Text("Kembali"),
-                onPressed: () => Navigator.pop(context)),
+            Text("Jenis Kelamin : $_character"),
+            ElevatedButton(
+              child: Text("Kembali"),
+              onPressed: () => Navigator.pop(context),
+            ),
           ],
         ),
       ),
@@ -139,7 +140,7 @@ class _HomeState extends State<Register> {
                   child: Text("Kembali"),
                   color: Colors.blue,
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pop(
                       context,
                       MaterialPageRoute(builder: (context) => FirstRoute()),
                     );
